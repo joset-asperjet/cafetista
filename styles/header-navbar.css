@@ -1,0 +1,374 @@
+/* IMPORTS */
+@font-face {
+  font-family: 'Neco';
+  src: url('/fonts/BebasNeue-Regular.ttf') format('ttf');
+  src: url('/fonts/Neco-Black.ttf') format('ttf');
+  src: url('/fonts/Neco-Black.woff') format('woff');
+  src: url('/fonts/Neco-Bold.ttf') format('ttf');
+  src: url('/fonts/Neco-Bold.woff') format('woff');
+  src: url('/fonts/Neco-Black.woff2') format('woff2');
+  font-family: 'BebasNeue';
+}
+/* IMPORTS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LOADERS */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  z-index: 9999;
+}
+#loading-image, #loading-text {
+  position: absolute;
+  animation: rise 2s ease-in-out forwards;
+  z-index: 1;
+}
+#loading-text {
+  font-size: 3em;
+}
+/* LOADERS */
+
+
+@keyframes rise {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+  
+
+}
+
+body ::after{
+  background: linear-gradient(to bottom, rgba(17, 35, 43, 0.3), rgba(17, 35, 43, 0.5));
+}
+
+.header-header{
+  margin: 0;
+  background: url('/vids/header.mp4') no-repeat center center/cover; /* Añade tu imagen de fondo aquí */
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+}
+.dispersed-text {
+  color: #fef5e5;
+  transition: letter-spacing 0.5s ease; /* Añade una transición suave al cambiar el espaciado de las letras */
+}
+.dispersed-text:hover {
+  letter-spacing: 2px; /* Aumenta el espaciado de las letras al pasar el mouse sobre el texto */
+}
+
+
+
+
+
+/* NAVBAR */
+.navbar {
+  height: 100px; /* Ajusta este valor según tus necesidades */
+}
+.navbar-container {
+  background: rgba(17, 35, 43, 0.6); /* Fondo translúcido con el color proporcionado */
+  backdrop-filter: blur(10px); /* Efecto de vidrio */
+  border-bottom: 1px solid rgb(208, 130, 41); /* Añade una línea delgada debajo del navbar */
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    font-family: Neco-Bold; 
+}
+nav ul li {
+    flex: 1;
+    text-align: center;
+  }
+.nav-link {
+  margin: 60px; /* Aumenta el espacio a la derecha de cada sección */
+  font-size: 23px ;
+  color: white !important;
+}
+.logo {
+  width: 120px;
+  transition: transform 0.3s ease-in-out; /* Asegura una transición suave */
+
+}
+.logo:hover {
+  transform: scale(1.1); /* Aumenta el tamaño del logo en un 10% */
+}
+/* NAVBAR */
+
+.video-container video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+
+.video-container :after {
+  content: "";
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.dispersed-text {
+  margin-top: 55px;
+  position: absolute; /* Permite posicionar el texto en cualquier lugar del video */
+  top: 50%; /* Centra el texto verticalmente */
+  left: 50%; /* Centra el texto horizontalmente */
+  transform: translate(-50%, -50%); /* Asegura que el centro del texto esté en el centro del video */
+  font-size: 90px;
+  font-family: Neco-Bold;
+  line-height: 1.2em;
+}
+
+@keyframes slide-in {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.bannerleft {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 100vh; /* Ajusta esto al tamaño que prefieras */
+  background-image: url('/pics/bannerleft.png');
+  background-size: auto;
+  background-repeat: repeat-x;
+  animation: slide-in 60s linear infinite;
+}
+
+
+
+/* HEADER */
+.video-container {
+  position: fixed; /* Hace que el video sea el contenedor de referencia para las imágenes */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.corner-image {
+  position: absolute; /* Permite posicionar las imágenes en cualquier lugar del video */
+  bottom: 0; /* Coloca las imágenes en la parte inferior del video */
+  width: 100px; /* Ajusta el tamaño de las imágenes según tus necesidades */
+  height: auto; /* Mantiene la proporción de las imágenes */
+}
+.corner-image.left {
+  top: 60%;
+  right: 80%;
+  width: 200px;
+}
+.corner-image.right {
+  top: 70%;
+  left: 70%;
+  width: 400px;
+}
+
+/* HEADER */
+
+
+.product{
+  margin: 20px; /* Añade una separación entre cada producto */
+  padding: 20px; /* Añade un espacio alrededor del contenido de cada producto */
+  border: 1px solid transparent; /* Hace que el marco sea transparente */
+  background-color: #fff; /* Añade un fondo blanco a cada producto */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave alrededor de cada producto para darles más separación visual */
+  background-color: #fff; /* Añade un fondo blanco a cada producto */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  margin: 0 10px
+}
+
+.nosotros{
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif; /* Asegura que la fuente se cargue */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  color: white; /* Color de fuente blanco */
+  display: flex;
+  justify-content: space-between;
+  flex: 3; /* Esto hace que el texto ocupe más espacio que la imagen */
+  padding: 20px;
+  flex: 1;
+  padding: 20px;
+  
+  
+}
+
+
+
+
+.text {
+  flex: 3; /* Esto hace que el texto ocupe más espacio que la imagen */
+  padding: 20px;
+  background-color: white; /* Fondo blanco para el texto */
+  color: black; /* Texto negro */
+}
+
+.image {
+  flex: 1;
+  padding: 20px;
+}
+
+
+#header {
+  position: relative; /* Asegura que el pseudo-elemento se posicione en relación con el header */
+  background: rgba(17, 35, 43, 0.6); /* Fondo translúcido con el color proporcionado */
+
+}
+
+.three-columns {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif; /* Asegura que la fuente se cargue */
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+  color: white; /* Color de fuente blanco */
+  display: flex;
+  justify-content: space-between;
+  flex: 3; /* Esto hace que el texto ocupe más espacio que la imagen */
+  padding: 20px;
+  flex: 1;
+  z-index: -1;
+  background: linear-gradient(to bottom, rgba(17, 35, 43, 0.0), rgba(17, 35, 43, 15));
+
+}
+
+.column {
+  flex: 1;
+  margin: 1em;
+  padding: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para darle profundidad */
+}
+
+
+.column img {
+  width: 100%; /* Esto hará que la imagen ocupe todo el ancho de la columna */
+  max-width: 300px; /* Esto limitará el ancho máximo de la imagen a 300px */
+  height: auto; /* Esto mantendrá la proporción de la imagen */
+  text-align: center; /* Centra el texto */
+  padding: 06%; /* Reduce el padding a 10px */
+  flex: 1;
+  
+
+}
+
+
+
+
+
+
+.animated-text-section {
+  position: relative;
+  overflow: hidden; /* Esconde el texto que se sale de la sección */
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80vw;  /* Ajusta el ancho al 80% del ancho del viewport */
+  height: 80vh; /* Ajusta la altura al 80% de la altura del viewport */
+
+
+}
+
+.image-container img {
+  width: 70%;  /* Ajusta el ancho al 100% del contenedor */
+  height: 70%; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio disponible */
+}
+
+.image-container .middle-image {
+  z-index: 1; /* Asegura que la imagen del medio esté encima del texto */
+}
+
+.animated-text {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  font-size: 2em; /* Hace el texto más grande */
+  animation: moveText 5s linear infinite; /* Anima el texto */
+}
+
+@keyframes moveText {
+  from { left: 100%; }
+  to { left: -100%; }
+}
+
+
+.founder-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.founder-container img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 10px;
+  padding: 10px;
+}
